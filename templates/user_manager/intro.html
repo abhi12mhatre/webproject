@@ -1,0 +1,51 @@
+{% load static %}
+<head>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <style>
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            padding: 80px 0;
+         }
+
+        .firstSection>div {
+            width: 32%;
+        }
+
+        .left {
+            background-color: transparent;
+            font-size: 2rem;
+        }
+
+        .right {
+            background-color: transparent;
+        }
+
+        .blue {
+            color: rgb(43, 220, 226);
+        }
+    </style>
+</head>
+
+<section class="firstSection">
+    <div class="left">
+        <br>
+        <div>Hi, my name is <span class="blue">{{user_profile.firstname}} {{user_profile.lastname}}.</span></div>
+        <div> I am a {{user_extra.job_role.title}}.</div>
+        <div> Providing solutions for, </div>
+        <span class="blue" id="element"></span><br>
+    </div>
+    <div class="right">
+        <img src="{% static 'user_manager/img/homebg.png' %}" alt="img1"
+             style="width: 100%; margin: 50px 0; border-radius: 5%;">
+    </div>
+</section>
+<script>
+    var typed = new Typed('#element', {
+      strings: {{user_extra.skills | safe}},
+      typeSpeed: 50,
+      shuffle: true,
+      loop: true,
+    });
+</script>
+<hr style="border: 1px solid rgb(43, 220, 226); width: 90%; margin: 0% 5%">

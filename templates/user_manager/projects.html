@@ -1,0 +1,60 @@
+<head>
+    <style>
+        .thirdSection {
+            width: 80vw;
+            margin: auto;
+        }
+
+        .carousel-inner {
+            margin: 0% 10%;
+            width: 80%;
+            border: 1px solid rgb(43, 220, 226);
+            border-radius: 1%;
+        }
+    </style>
+</head>
+<section class="thirdSection" id="my_projects">
+    <br>
+    <h3>My Projects</h3> <br>
+    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active text-center">
+                <a href="{% url 'estate_dashboard' %}"><img src="https://cdn.ebaumsworld.com/mediaFiles/picture/2452130/85386506.jpg"
+                                             alt="Project 1" style="width: 50%; padding: 2%"></a>
+            </div>
+            <div class="carousel-item text-center">
+                <a href="{% url 'store_dashboard' %}"><img
+                        src="https://th.bing.com/th/id/R.aa22f42d4ceaff341c87f856dfa584c4?rik=JZn6BcNNWyVhBw&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f08%2fRandom-Nature-Wallpaper.jpg&ehk=14tqTZA3oC%2b8HDImHh6dDPvoOzPMGBlt9F2IfdLrWnY%3d&risl=&pid=ImgRaw&r=0"
+                        alt="Project 2" style="width: 50%; padding: 2%"></a>
+            </div>
+            <div class="carousel-item text-center">
+                <a href="{% url 'hrms_dashboard' %}"><img
+                        src="https://render.fineartamerica.com/images/rendered/square-dynamic/small/images/artworkimages/mediumlarge/1/cutting-loose-phil-koch.jpg"
+                        alt="Project 3" style="width: 50%; padding: 2%"></a>
+            </div>
+            <div class="carousel-item text-center">
+                <a href="{% url 'tour_dashboard' %}"><img
+                        src="https://th.bing.com/th/id/R.aa22f42d4ceaff341c87f856dfa584c4?rik=JZn6BcNNWyVhBw&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f08%2fRandom-Nature-Wallpaper.jpg&ehk=14tqTZA3oC%2b8HDImHh6dDPvoOzPMGBlt9F2IfdLrWnY%3d&risl=&pid=ImgRaw&r=0"
+                        alt="Project 4" style="width: 50%; padding: 2%"></a>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</section>
+

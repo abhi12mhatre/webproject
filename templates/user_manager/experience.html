@@ -1,0 +1,162 @@
+<head>
+    <style>
+        .secondSection {
+          width: 80vw;
+          margin: auto;
+        }
+
+        .circle {
+            padding: 13px 20px;
+            border-radius: 50%;
+            background-color: rgb(43, 220, 226);
+            color: #fff;
+            max-height: 50px;
+            z-index: 2;
+        }
+
+        .how-it-works.row .col-2 {
+            align-self: stretch;
+        }
+
+        .how-it-works.row .col-2::after {
+            content: "";
+            position: absolute;
+            border-left: 3px solid rgb(43, 220, 226);
+            z-index: 1;
+        }
+
+
+        .timeline div {
+            padding: 0;
+            height: 40px;
+        }
+
+        .timeline hr {
+            border-top: 3px solid rgb(43, 220, 226);
+            margin: 0;
+            top: 17px;
+            position: relative;
+        }
+
+        .timeline .col-2 {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .timeline .corner {
+            border: 3px solid rgb(43, 220, 226);
+            width: 100%;
+            position: relative;
+            border-radius: 15px;
+        }
+
+        .timeline .top-right {
+            left: 50%;
+            top: -50%;
+          }
+
+        .timeline .left-bottom {
+            left: -50%;
+            top: calc(50% - 3px);
+          }
+
+        .timeline .top-left {
+            left: -50%;
+            top: -50%;
+          }
+
+        .timeline .right-bottom {
+            left: 50%;
+            top: calc(50% - 3px);
+          }
+
+        .custom-btn {
+            background-color: transparent;
+            color: #fff;
+            border-color: #fff;
+          }
+
+        .custom-btn:hover {
+            background-color: rgb(55, 75, 90);
+            border-color: rgb(55, 75, 90);
+          }
+
+        .a::-webkit-scrollbar {
+            background-color: transparent;
+          }
+
+    </style>
+</head>
+<section class="secondSection">
+    <br>
+    <h3>Experience</h3>
+    <br>
+    <div class="a" style="overflow:scroll; height:300px;">
+        <div class="container">
+            {% for exp in experience %}
+            {% if not forloop.counter|divisibleby:2 %}
+            <div class="row align-items-center how-it-works d-flex">
+                <div class="col-2 text-center bottom d-inline-flex justify-content-center align-items-center">
+                    <div class="circle font-weight-bold">{{forloop.counter}}</div>
+                </div>
+                <div class="col-6">
+                    <h5>{{exp.company_name}} - {{exp.position}}</h5>
+                    <!--<h6>{{exp.from_date}} -
+                        {% if exp.to_date != None%}
+                            {{exp.to_date}}
+                        {% else %}
+                            present
+                        {% endif %}
+                    </h6>-->
+                    <p>{{exp.description}}</p>
+                </div>
+            </div>
+            <div class="row timeline">
+                <div class="col-2">
+                    <div class="corner top-right"></div>
+                </div>
+                <div class="col-8">
+                    <hr/>
+                </div>
+                <div class="col-2">
+                    <div class="corner left-bottom"></div>
+                </div>
+            </div>
+            {% else %}
+            <div class="row align-items-center justify-content-end how-it-works d-flex">
+                <div class="col-6 text-right">
+                    <h5>{{exp.company_name}}-{{exp.position}}</h5>
+                    <!--<h6>{{exp.from_date}} -
+                        {% if exp.to_date != None%}
+                            {{exp.to_date}}
+                        {% else %}
+                            present
+                        {% endif %}
+                    </h6>-->
+                    <p>{{exp.description}}</p>
+                </div>
+                <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+                    <div class="circle font-weight-bold">{{forloop.counter}}</div>
+                </div>
+            </div>
+            <div class="row timeline">
+                <div class="col-2">
+                    <div class="corner right-bottom"></div>
+                </div>
+                <div class="col-8">
+                    <hr/>
+                </div>
+                <div class="col-2">
+                    <div class="corner top-left"></div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <br>
+    </div>
+</section>
+<br>
+<br>
+<br>
+<hr style="border: 1px solid rgb(43, 220, 226); width: 90%; margin: 0% 5%">

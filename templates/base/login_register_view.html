@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col" id="login-form">
+        <div class="container mt-4">
+            {% include 'templates/base/login_form.html'%}
+            <br><span id="login_link">Not a user? Sign Up</span>
+        </div>
+    </div>
+    <div class="col" id="register-form" style="display:none;">
+        <div class="container mt-4">
+            {% include 'templates/base/register_form.html'%}
+            <br><span id="register_link">Already a user? Login</span>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    document.getElementById("login_link").addEventListener("click", function() {
+        var register_form = document.getElementById("register-form");
+        var login_form = document.getElementById("login-form");
+        register_form.style.display = "block";
+        login_form.style.display = "none";
+    });
+
+
+
+    document.getElementById("register_link").addEventListener("click", function() {
+        var register_form = document.getElementById("register-form");
+        var login_form = document.getElementById("login-form");
+        register_form.style.display = "none";
+        login_form.style.display = "block";
+    });
+
+</script>

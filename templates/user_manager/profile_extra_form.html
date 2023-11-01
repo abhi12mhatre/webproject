@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile Extra Form</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {{ userextra_form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

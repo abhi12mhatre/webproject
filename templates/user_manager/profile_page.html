@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'templates/base/base.html' %}
+<html>
+<head>
+    {% block title %}<title>Profile Page</title>{% endblock %}
+    <style>
+        main {
+            background-color: #000d10;
+            color: white;
+        }
+    </style>
+
+
+</head>
+<body>
+{% block content %}
+<main>
+    {% include 'templates/user_manager/intro.html'%}
+    {% if experience != None %}
+        {% include 'templates/user_manager/experience.html'%}
+    {% endif %}
+    {% include 'templates/user_manager/projects.html'%}
+</main>
+{% endblock %}
+</body>
+</html>
