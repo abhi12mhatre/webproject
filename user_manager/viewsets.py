@@ -25,7 +25,6 @@ class UserExtraViewSet(viewsets.ModelViewSet):
 class UserProfilePageViewSet(viewsets.ViewSet):
     @staticmethod
     def list(request, username='abhi12mhatre'):
-        print(username)
         try:
             user_profile_obj = UserProfile.objects.get(user__username=username)
             user_extra_queryset = UserExtra.objects.filter(userprofile=user_profile_obj, status=0).values('key', 'value')
