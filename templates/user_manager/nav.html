@@ -1,11 +1,32 @@
 <ul class="navbar-nav mx-auto">
     <li class="nav-item">
-        <a class="nav-link" href="{% url 'profile' %}">Home</a>
+        <a class="nav-link" href="#home" id="user_home_nav">Home</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#my_projects">Projects</a>
+        <a class="nav-link" href="#projects" id="user_project_nav">Projects</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#about" id="user_about_nav">About</a>
     </li>
 </ul>
+
+<script>
+    document.getElementById("user_about_nav").addEventListener("click", function() {
+        var about = document.getElementById("user_about");
+        var main = document.getElementById("user_main");
+        about.style.display = "block";
+        main.style.display = "none";
+    });
+    document.getElementById("user_home_nav").addEventListener("click", function() {
+        var about = document.getElementById("user_about");
+        var main = document.getElementById("user_main");
+        about.style.display = "none";
+        main.style.display = "block";
+    });
+    document.getElementById("user_project_nav").addEventListener("click", function() {
+        var about = document.getElementById("user_about");
+        var main = document.getElementById("user_main");
+        about.style.display = "none";
+        main.style.display = "block";
+    });
+</script>

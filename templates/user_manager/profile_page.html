@@ -14,12 +14,15 @@
 </head>
 <body>
 {% block content %}
-<main>
+<main id="user_main">
     {% include 'templates/user_manager/intro.html'%}
     {% if experience != None %}
         {% include 'templates/user_manager/experience.html'%}
     {% endif %}
     {% include 'templates/user_manager/projects.html'%}
+</main>
+<main id="user_about" style="display: none;">
+    {% include 'templates/user_manager/about.html'%}
 </main>
 {% endblock %}
 </body>

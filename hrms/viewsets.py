@@ -28,6 +28,5 @@ class SalaryViewSet(viewsets.ModelViewSet):
 class DashboardViewSet(viewsets.ViewSet):
     @staticmethod
     def list(request):
-        print(12)
         context = {'nav_link': 'templates/hrms/nav.html'}
         return render(request, 'templates/hrms/dashboard.html', context=context)

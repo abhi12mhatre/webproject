@@ -51,6 +51,14 @@
         <span style="padding:20px;">
             {% if user_profile %}
             {{user_profile.firstname}}'s Portfolio
+            {% elif 'hrms' in request.path %}
+            HR Management System
+            {% elif 'estate_manager' in request.path %}
+            Estate Management System
+            {% elif 'store_manager' in request.path %}
+            Store Management System
+            {% elif 'tour_manager' in request.path %}
+            Tour Management System
             {% endif %}
         </span>
     </a>
