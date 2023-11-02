@@ -97,7 +97,8 @@ def login_view(request):
             login(request, user)
             username = user.username
             goto = request.GET.get('next')
-            if not goto or goto == '/':
+            pages = ['hrms', 'tour_manager', 'store_manager', 'estate_manager']
+            if not goto or goto.strip('/') not in pages:
                 goto = 'profile'
             return redirect(goto, username=username)
         else:
